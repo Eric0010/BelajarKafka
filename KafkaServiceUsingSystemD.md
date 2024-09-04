@@ -95,8 +95,8 @@ Langkah pertama yang harus dilakukan adalah:
     ```
     [Unit]
     Description=Apache Kafka Service that requires zookeeper service
-    Requires=zookeeper.service
-    After=zookeeper.service
+    Requires=kafka.service
+    After=kafka.service
     
     [Service]
     Type=simple
