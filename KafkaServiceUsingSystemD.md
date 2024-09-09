@@ -115,7 +115,7 @@ Hak khusus ini diperlukan untuk seorang user untuk menggunakan dependency dari k
     ```
     Penjelasan singkat mengenai ```ExecStart``` yang berisikan ``` /home/kafka/kafka/bin/zookeeper-server-start.sh /home/kafka/kafka/config/zookeeper.properties``` dan ``` /home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties ``` :
 
-    Setiap ingin memulai sebuah server zookeeper dan kafka, perlu dibutuhkan sebuah file properties. Di dalam file properties ini, terdapat sebuah alamat port dan tujuan file direktori yang digunakan zookeeper dan kafka untuk memulai sebuah server dan menyimpan beberapa metadata.
+    Setiap ingin memulai sebuah server zookeeper dan kafka, perlu dibutuhkan sebuah file properties. Di dalam file properties ini, ada base code dari java yang membuat coding menjadi lebih dinamis.
 
     Setelah semua proses ini selesai, server Kafka sudah bisa dijalankan menggunakan command
 
