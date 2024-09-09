@@ -2,7 +2,7 @@
 
 Langkah pertama yang harus dilakukan adalah:
 
-1. Menambahkan User baru dengan nama Kafka dengan command
+1. Menambahkan User baru dengan nama Kafka dengan command. Menambahkan User baru lebih menjaga data seorang user dibandingkan menjalankan kafka di main terminal Ubuntu.
 
    ```
    sudo adduser kafka
@@ -95,8 +95,8 @@ Langkah pertama yang harus dilakukan adalah:
     ```
     [Unit]
     Description=Apache Kafka Service that requires zookeeper service
-    Requires=kafka.service
-    After=kafka.service
+    Requires=zookeeper.service
+    After=zookeeper.service
     
     [Service]
     Type=simple
@@ -108,13 +108,20 @@ Langkah pertama yang harus dilakukan adalah:
     [Install]
     WantedBy=multi-user.target
     ```
+    Penjelasan singkat mengenai ```ExecStart``` yang berisikan ``` /home/kafka/kafka/bin/zookeeper-server-start.sh /home/kafka/kafka/config/zookeeper.properties``` dan ``` /home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties ``` :
+
+    Setiap ingin memulai sebuah server zookeeper dan kafka, perlu dibutuhkan sebuah file properties. Di dalam file properties ini, terdapat sebuah alamat port dan tujuan file direktori yang digunakan zookeeper dan kafka untuk memulai sebuah server dan menyimpan beberapa metadata.
 
     Setelah semua proses ini selesai, server Kafka sudah bisa dijalankan menggunakan command
 
     ```
     sudo systemctl start kafka
     ```
-12. Lakukan pengecekan status pada server Kafka:
+    Command berikut juga bisa dipakai, jika seorang user sudah login pada user yang sudah dibuat sebelumnya:
+    ```
+    sudo systemctl start kafka
+    ```
+13. Lakukan pengecekan status pada server Kafka:
 
     ```
     sudo systemctl status kafka
