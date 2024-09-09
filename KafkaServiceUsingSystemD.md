@@ -8,12 +8,15 @@ Langkah pertama yang harus dilakukan adalah:
    sudo adduser kafka
 
    ```
-2. User Kafka harus ditambahkan ke sudo group supaya mempunyai hak khusus dalam instalasi Kafka dengan menggunakan command
+2. User Kafka harus ditambahkan ke sudo group supaya mempunyai hak khusus dalam instalasi Kafka dengan menggunakan command berikut ini:
 
    ```
    sudo adduser kafka sudo
 
    ```
+
+Hak khusus ini diperlukan untuk seorang user untuk menggunakan dependency dari kafka sendiri sebagai sudo-er.
+   
 3. Log in ke akun Kafka yang sudah dibuat
 
    ```
