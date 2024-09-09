@@ -8,6 +8,10 @@ Langkah pertama yang harus dilakukan adalah:
    sudo adduser kafka
 
    ```
+
+![image](https://github.com/user-attachments/assets/7829d6dc-efba-4f4f-93d1-72cbd6565ae4)
+
+   
 2. User Kafka harus ditambahkan ke sudo group supaya mempunyai hak khusus dalam instalasi Kafka dengan menggunakan command berikut ini:
 
    ```
@@ -120,14 +124,15 @@ Hak khusus ini diperlukan untuk seorang user untuk menggunakan dependency dari k
     ```
     Command berikut juga bisa dipakai, jika seorang user sudah login pada user yang sudah dibuat sebelumnya:
     ```
-    sudo systemctl start kafka
+    systemctl start kafka
     ```
 11. Lakukan pengecekan status pada server Kafka:
 
     ```
     sudo systemctl status kafka
     ```
-    
+    ![image](https://github.com/user-attachments/assets/f2a3fdef-70f8-432b-9cb3-5764cf6411e8)
+
        
 
 
