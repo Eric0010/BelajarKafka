@@ -27,7 +27,12 @@ Setelah command tersbut berjalan, berikut adalah command untuk melakukan pengece
 ```
 ~/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 ```
-# 3. Produce data with Kafka
+# 3. Check Topic with Kafka
+Berikut adalah command untuk melakukan pengecekan topik di Kafka:
+```
+~/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+```
+# 4. Produce data with Kafka
 
 Untuk menghasilkan sebuah data, hal pertama yang harus dibuat adalah topik.
 
@@ -39,7 +44,7 @@ Setelah membuat topik barulah kita bisa menghasilkan data yang ingin kita buat d
 
 Di dalam code yang berjalan seperti diatas user berlaku sebagai produsen yang bertugas untuk menghasilkan data dan akan diterima oleh konsumen.
 
-# 4. Consume data with Kafka
+# 5. Consume data with Kafka
 
 Setelah menghasilkan data sebagai produsen, langkah selanjutnya adalah user akan berlaku sebagai konsumen data.
 
