@@ -50,9 +50,7 @@ Langkah pertama yang harus dilakukan adalah:
    ```
    mv kafka_2.12-3.4.0/ kafka/
    ```
-9. Setelah itu, perlu pengubahan nama destinasi yang terdapat pada `log.dirs` menjadi `/home/kafka/kafka-logs`
-    
-10. Setelah semua selesai, saatnya start server Zookeeper dan Kafka
+9. Setelah semua selesai, saatnya start server Zookeeper dan Kafka
 
     ```
     ~/bin/zookeeper-server-start.sh  ~/kafka/config/zookeeper.properties
@@ -61,7 +59,7 @@ Langkah pertama yang harus dilakukan adalah:
     ~/kafka/bin/kafka-server-start.sh  ~/kafka/config/server.properties
     ```
 
-11. Untuk Efisiensi, beberapa unit file dari systemD harus dibuat dan juga menggunakan systemctl.
+10. Untuk Efisiensi, beberapa unit file dari systemD harus dibuat dan juga menggunakan systemctl.
 
     Unit file untuk Zookeeper
 
@@ -121,7 +119,7 @@ Langkah pertama yang harus dilakukan adalah:
     ```
     sudo systemctl start kafka
     ```
-13. Lakukan pengecekan status pada server Kafka:
+11. Lakukan pengecekan status pada server Kafka:
 
     ```
     sudo systemctl status kafka
