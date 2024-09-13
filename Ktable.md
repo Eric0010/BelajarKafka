@@ -156,9 +156,9 @@ public class KTableApp {
 }
 ```
 
-Program Java ini mengatur aplikasi Kafka Streams untuk memproses data dari satu topik dan mengirim hasilnya ke topik lain. Program ini mendengarkan topik ```inputKtable```, membaca catatan ke dalam KTable (abstraksi tabel di Kafka yang menyimpan pasangan key-value), dan memfilter catatan yang mengandung kata "orderNumber" atau "bogus". Untuk catatan yang cocok, program ini mengekstrak bagian string setelah tanda hubung (-) dan memfilter catatan lebih lanjut yang angkanya lebih besar dari 1. Catatan yang terfilter ini kemudian dikirim ke topik ```outputKtable```. Program ini juga mencatat catatan yang keluar dan menghentikan aplikasi Kafka Streams secara teratur saat dihentikan. Selain itu, program ini menggunakan `TopicLoader.runProducer
+Kode Java ini menunjukkan penggunaan Kafka Streams untuk memproses dan memfilter data dalam sebuah topik Kafka menggunakan KTables. Pertama, kode ini menyiapkan properti seperti ID aplikasi dan alamat server Kafka. Sebuah ```StreamsBuilder``` digunakan untuk mendefinisikan logika pemrosesan stream. Sebuah KTable dibuat dari topik ```inputKtable``` dan disimpan di dalam sebuah penyimpanan status (state store). KTable ini memfilter catatan yang mengandung "orderNumber" atau "bogus", mengambil bagian angka setelah tanda hubung, dan memfilter lebih lanjut untuk hanya menyimpan catatan yang angkanya lebih besar dari 1. Catatan-catatan yang telah difilter ini dikonversi menjadi stream dan dikirim ke topik ```outputKtable```, sambil mencetak setiap catatan keluar ke konsol.
 
-Dengan Class yang sudah ada diatas, maka yang harus kita lakukan adalah menjalankan Class TopicProducer terlebih dahulu, kemudian menjalankan Class Ktable.
+Instance ```KafkaStreams``` dijalankan untuk memulai pemrosesan stream. Sebuah CountDownLatch digunakan untuk menangani penghentian aplikasi dengan lancar. Selain itu, metode ```TopicLoader.runProducer()``` dipanggil untuk mengirim data uji ke topik input sebelum pemrosesan stream dimulai.
 
 Berikut adalah contoh data yang akan ditest di dalam KTable:
 
