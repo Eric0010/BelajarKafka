@@ -36,12 +36,12 @@ public class WordCountApplication {
 
         final StreamsBuilder builder = new StreamsBuilder();
 
-        KStream<String, String> source = builder.stream("streams-test-wordcount-input");
+        KStream<String, String> source = builder.stream("wordcount-input");
         source.flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\\W+")))
                 .groupBy((key, value) -> value)
                 .count(Materialized.<String, Long, KeyValueStore<Bytes, byte[]>>as("counts-store"))
                 .toStream()
-                .to("streams-test-wordcount-output", Produced.with(Serdes.String(), Serdes.Long()));
+                .to("wordcount-output", Produced.with(Serdes.String(), Serdes.Long()));
 
         final Topology topology = builder.build();
         final KafkaStreams streams = new KafkaStreams(topology, props);
@@ -69,4 +69,48 @@ public class WordCountApplication {
 }
 ```
 
-Kode ini adalah aplikasi Kafka Streams yang menghitung jumlah kemunculan kata dalam aliran data teks. Aplikasi ini membaca dari topik input Kafka (streams-test-wordcount-input), memproses setiap pesan dengan memecahnya menjadi kata-kata, dan mengonversi setiap kata menjadi huruf kecil. Setelah itu, aplikasi mengelompokkan kata-kata dan menghitung jumlah kemunculannya menggunakan fitur pemrosesan stateful Kafka (melalui penyimpanan key-value yang disebut counts-store). Hasil dari perhitungan jumlah kata tersebut kemudian dikirimkan ke topik output Kafka (streams-test-wordcount-output). Aplikasi ini dirancang untuk berjalan hingga dihentikan, dengan menggunakan shutdown hook untuk menangani penutupan klien Kafka Streams secara bersih.
+Code ini adalah aplikasi Kafka Streams yang menghitung jumlah kemunculan kata dalam aliran data teks. Aplikasi ini membaca dari topik input Kafka ```wordcount-input```, memproses setiap pesan dengan memecahnya menjadi kata-kata, dan mengonversi setiap kata menjadi huruf kecil. 
+Setelah itu, aplikasi mengelompokkan kata-kata dan menghitung jumlah kemunculannya menggunakan fitur pemrosesan stateful Kafka melalui penyimpanan key-value yang disebut ```counts-store```.
+
+Hasil dari perhitungan jumlah kata tersebut kemudian dikirimkan ke topik output Kafka ```wordcount-output```. Aplikasi ini dirancang untuk berjalan hingga dihentikan, dengan menggunakan ```shutdown hook``` untuk menangani penutupan klien Kafka Streams secara bersih.
+
+Berikut ini adalah hasil dari Class KafkaStreams WordCount:
+
+Setelah menjalankan Code diatas saya juga perlu melakukan penghasilan messages di dalam topik ```wordcount-input``` dengan command:
+
+```
+bin/kafka-console-producer.sh --bootstrap-server server-eric:9092 --topic wordcount-input
+```
+
+Setelah itu, saya akan memasukan beberapa messages seperti berikut:
+
+![image](https://github.com/user-attachments/assets/ac4aaff2-c25d-491a-be94-aba7a01200f6)
+
+Seperti yang ada digambar, saya sudah memsaukan beberapa message seperti:
+
+>a wild boar just appeared
+
+>a snake just demolished a guy
+
+Setelah memproduce sebuah data, untuk melihat keberhasilan Class WordCount, saya juga perlu melakukan pengkonsumen data di dalam topik ```wordcount-output``` dalam command berikut:
+
+```
+bin/kafka-console-consumer.sh --bootstrap-server server-eric:9092 \
+    --topic wordcount-output \
+    --from-beginning \
+    --formatter kafka.tools.DefaultMessageFormatter \
+    --property print.key=true \
+    --property print.value=true \
+    --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer \
+    --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
+```
+
+Jika WordCount berhasil, maka hasil yang ada di dalam consumer adalah seperti pada gambar:
+
+![image](https://github.com/user-attachments/assets/1ac1db35-1d55-4db9-b407-312544d666be)
+
+
+
+
+
+
