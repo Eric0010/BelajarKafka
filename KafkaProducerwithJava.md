@@ -16,7 +16,7 @@ Berikut adalah langkah - langkah yang diperlukan sebelum membangun sebuah progra
         </dependency>
     </dependencies>
 ```
-2. Masukan Class Produser Kafka berikut ke dlaam projek:
+2. Masukan Class Produser Kafka berikut ke dalam projek:
    ```
    
     import org.apache.kafka.clients.producer.KafkaProducer;
