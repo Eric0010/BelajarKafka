@@ -14,11 +14,6 @@ Berikut adalah langkah - langkah yang diperlukan sebelum membangun sebuah progra
             <artifactId>kafka_2.13</artifactId>
             <version>3.6.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>3.6.2</version>
-        </dependency>
     </dependencies>
 ```
 2. Masukan Class Produser Kafka berikut ke dlaam projek:
