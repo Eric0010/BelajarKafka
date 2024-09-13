@@ -56,5 +56,7 @@ Maka hasilnya bisa terlihat seperti berikut ini:
 
 ![image](https://github.com/user-attachments/assets/0334726f-68b6-4146-b218-b137f901939f)
 
+Disini terlihat hasil sudah tampil dari data pertama sampai data ke 20 yang dimulai dari angka 0 sampai dengan 19.
+
 
 
