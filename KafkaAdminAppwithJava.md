@@ -64,3 +64,5 @@ Metode deleteTopic: Metode ini menerima instansi AdminClient dan nama topik seba
 
 Metode createTopic: Metode ini membuat topik Kafka baru. Ia menerima AdminClient, nama topik, jumlah partisi, dan faktor replikasi sebagai parameter. Objek NewTopic dibuat dengan detail ini, dan metode ```createTopics``` pada AdminClient digunakan untuk mencoba membuat topik tersebut. Seperti pada ```deleteTopic```, metode ini menunggu hasilnya menggunakan ```all()``` ```.get()```. Jika topik berhasil dibuat, pesan sukses akan dicetak; jika tidak, kesalahan akan ditangani dan pengecualian dicatat.
 
+Setiap metode dalam kode ini mengenkapsulasi operasi asinkron dan menangani kesalahan yang mungkin terjadi selama interaksi dengan Kafka, seperti masalah jaringan atau kesalahan pada broker Kafka.
+
