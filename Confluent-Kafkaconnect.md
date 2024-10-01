@@ -7,6 +7,15 @@ Kafka Sink:
 ![image](https://github.com/user-attachments/assets/178fa67e-5038-4d99-985b-e8448e84fedd)
 Untuk sememntara waktu, Kafka Sink sudah bisa 2 CLient: Python dan Java.
 
+Message Python:
+
+![image](https://github.com/user-attachments/assets/f3f415b3-44d3-430c-a0e2-ffd5a0b054ee)
+
+Message Java:
+
+![image](https://github.com/user-attachments/assets/dc3a213b-d6c0-4b46-8212-d61976fc7c64)
+
+
 Message Client Golang masih Deserialized. 
 
 
