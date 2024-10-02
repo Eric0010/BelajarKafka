@@ -16,7 +16,8 @@ Message Java:
 ![image](https://github.com/user-attachments/assets/dc3a213b-d6c0-4b46-8212-d61976fc7c64)
 
 
-Message Client Golang masih Deserialized. 
+Message Client Golang sudah serialized. 
 
 
-![image](https://github.com/user-attachments/assets/91b52ffd-e4c7-48cc-a56f-22fd9baa3e14)
+![image](https://github.com/user-attachments/assets/586e3532-9370-41d9-9e22-ffa04104268b)
+
