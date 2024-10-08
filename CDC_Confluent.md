@@ -227,7 +227,7 @@ DELETE
 
 ![WhatsApp Image 2024-10-07 at 16 49 41_8bd84b3b](https://github.com/user-attachments/assets/171559b6-54f4-44e4-b756-ded8bb9c6820)
 
-
+3. Oracle
 
 
 
