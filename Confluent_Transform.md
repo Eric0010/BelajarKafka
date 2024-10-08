@@ -21,14 +21,17 @@ Contoh misalnya pada gambar saya mau hilangkin field age.
 Didalam case ini, saya akan menggunakan fitur ReplaceField, untuk drop atau menghapus field yang saya mau hilangkan.
 
 Maka di konfigurasi Connect yang saya miliki saya menambahkan:
-
+```
 transforms=dropAge
 transforms.dropAge.type=org.apache.kafka.connect.transforms.ReplaceField$Value
 transforms.dropAge.blacklist=age
+```
 
-dropage = name transform
-transforms.dropAge.type = tipe transformation yang merubah value di dalam sebuah record
-transforms.dropAge.blacklist = mewakili field age yang saya mau drop
+dropage = name transform.
+
+transforms.dropAge.type = tipe transformation yang merubah value di dalam sebuah record.
+
+transforms.dropAge.blacklist = mewakili field age yang saya mau drop.
 
 Hasilnya dari 
 
