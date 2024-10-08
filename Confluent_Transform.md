@@ -36,14 +36,19 @@ transforms.dropAge.blacklist = mewakili field age yang saya mau drop.
 Hasilnya dari 
 
 name
+
 id
+
 hobby
+
 age
 
 nantinya akan menjadi
 
 name 
+
 id
+
 hobby
 
 setelah menggunakan transform
