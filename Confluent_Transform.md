@@ -16,7 +16,7 @@ Berikut adalah Fitur - fitur Transform yang sering digunakan:
 
 Contoh misalnya pada gambar saya mau hilangkin field age.
 
-![image](https://github.com/user-attachments/assets/c99d3afe-6a1f-43a4-9938-fe3eedb9a12e)
+![image](https://github.com/user-attachments/assets/7e9d4d73-78f5-4938-83af-b81814e9b754)
 
 Didalam case ini, saya akan menggunakan fitur ReplaceField, untuk drop atau menghapus field yang saya mau hilangkan.
 
@@ -51,5 +51,8 @@ id
 
 hobby
 
-setelah menggunakan transform
+setelah menggunakan transform, seperti pada gambar berikut ini
+
+![image](https://github.com/user-attachments/assets/6f095120-e7f6-45a1-a0e4-e8a1512cf225)
+
 
