@@ -200,4 +200,5 @@ Lalu, jika ingin memasukan data Scrape ke database, saya menggunakan JDBC sink y
 
 Berikut hasilnya:
 
-![image](https://github.com/user-attachments/assets/7ce7bf32-aa2d-4d05-914b-ce89f42fa148)
+![image](https://github.com/user-attachments/assets/fcfb768e-2336-437f-b6fa-d7174311e5a4)
+
