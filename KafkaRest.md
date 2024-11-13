@@ -1,7 +1,5 @@
 # Pengertian
 
-Berikut terjemahan ke bahasa Indonesia:
-
 ---
 
 **Kafka REST Proxy**, atau disebut juga **kafkarest**, adalah API RESTful yang disediakan oleh Apache Kafka untuk berinteraksi dengan cluster Kafka melalui permintaan HTTP, bukan klien Kafka asli. Kafka REST Proxy adalah bagian dari Confluent Platform dan memudahkan penggunaan Kafka dengan memungkinkan aplikasi untuk berkomunikasi dengan topik Kafka melalui panggilan RESTful sederhana.
